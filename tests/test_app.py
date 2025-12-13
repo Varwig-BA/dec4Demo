@@ -41,3 +41,18 @@ def test_logarithm():
 
 def test_logarithm2():
   assert app.logarithm(1,10) == 0
+
+def test_square():
+  assert square(10) == 100
+
+def test_sine():
+  assert sine(0) == 0
+
+def test_cosine():
+  assert cosine(0) == 1
+
+def test_sqrt():
+  assert sqrt(100) == 10
+
+def test_percentage():
+  assert percentage(2,8) == 25
