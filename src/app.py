@@ -25,8 +25,8 @@ def cosine(a):
     return math.cos(a)
 
 def sqrt(a):
-    math.sqrt(a)
+    return math.sqrt(a)
 
 # Find the percentage of a/b
 def percentage(a,b):
-    float(a) / float(b) * 100
+    return float(a) / float(b) * 100
