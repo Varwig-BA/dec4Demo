@@ -1,17 +1,17 @@
-name: Python CICD
+name: CD
 
 on:
   push:
     branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  run-tests:
+  Deploy:
     runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,10 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-
-      - name: Run basic tests
-        run: pytest -q
-
+          
       - name: Run tests with coverage
         run: |
           pytest -q \
@@ -46,13 +43,6 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./sites
-
-  Deploy:
-    needs: run-tests
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    steps:
+      
       - name: deploy the artifacts
         uses: actions/deploy-pages@v4
