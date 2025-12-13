@@ -36,3 +36,8 @@ def test_divide2():
 def test_divide3():
   assert app.divide(7,2) != 3
 
+def test_logarithm():
+  assert app.logarithm(4,2) == 2
+
+def test_logarithm2():
+  assert app.logarithm(1,10) == 0
